@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    password: 1234
+    url: jdbc:postgresql://localhost:5432/portafolio
+    username: postgres
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      platform: postgres
