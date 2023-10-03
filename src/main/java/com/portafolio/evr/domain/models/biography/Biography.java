@@ -9,4 +9,10 @@ public class Biography {
     private Long id;
     private String title;
     private String description;
+
+    public void updateRequest(BiographyRequest biographyRequest) {
+    }
+
+
+
 }

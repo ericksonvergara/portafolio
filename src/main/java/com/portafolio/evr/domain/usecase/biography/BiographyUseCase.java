@@ -21,4 +21,16 @@ public class BiographyUseCase {
     public Biography findById(Long id){
         return iBiographyRepository.findById(id);
     }
+
+    public Biography update(BiographyRequest updatedBiographyRequest) {
+        Biography biography = iBiographyRepository.findById(updatedBiographyRequest.getId());
+        if (biography != null) {
+            biography.updateRequest(updatedBiographyRequest);
+            iBiographyRepository.update(updatedBiographyRequest);
+            return biography;
+        } else {
+            return null;
+        }
+    }
+
 }

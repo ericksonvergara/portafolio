@@ -20,6 +20,4 @@ public class UseCaseBeanConfig {
     public BiographyUseCase biographyUseCase(IBiographyRepository iBiographyRepository){
         return new BiographyUseCase(iBiographyRepository);
     }
-
-
 }

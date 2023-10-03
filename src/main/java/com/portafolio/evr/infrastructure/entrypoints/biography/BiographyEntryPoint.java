@@ -38,7 +38,20 @@ public class BiographyEntryPoint {
             log.error("Error saving biography: " + e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error find biography");
         }
+    }
 
-
+    @PutMapping("/update")
+    public ResponseEntity<?> updateBiography(@RequestBody BiographyRequest updatedBiographyRequest) {
+        try {
+            Biography updatedBiography = biographyUseCase.update(updatedBiographyRequest);
+            if (updatedBiography != null) {
+                return ResponseEntity.ok("Biography updated successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Biography not found");
+            }
+        } catch (Exception e) {
+            log.error("Error updating biography: " + e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating biography");
+        }
     }
 }

@@ -43,4 +43,9 @@ public class BiographyRepositoryAdapter implements IBiographyRepository {
                 .description(biographyDBO.getDescription())
                 .build();
     }
+
+    @Override
+    public Biography update(BiographyRequest biographyRequest) {
+        return null;
+    }
 }
